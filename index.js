@@ -12,10 +12,10 @@ app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
 });
 
-// Rotas
+// Rotas;
 const { talker } = require('./routers');
 
-// Requisito 1 
+// Requisito 1 e 2;
 app.use('/talker', talker);
 
 app.listen(PORT, () => {
