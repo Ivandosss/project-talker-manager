@@ -12,6 +12,12 @@ app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
 });
 
+// Rotas
+const { talker } = require('./routers');
+
+// Requisito 1 
+app.use('/talker', talker);
+
 app.listen(PORT, () => {
   console.log('Online');
 });
