@@ -1,12 +1,17 @@
 const { read } = require('../helpers/readBody');
 
-const path = './talker.json';
-const responseError = { menssage: 'Pessoa palestrante não encontrada' };
+const PATH_FILE = './talker.json';
+const STATUS_OK = 200;
+const JSON_RES = { message: 'Pessoa palestrante não encontrada' };
+const ERROR_STATUS = 404;
 
-  const getTalkerId = async (req, res) => {
-  const data = await read(path);
-  const findTalker = data.find((talker) => talker.id === Number(req.params.id));
-  return findTalker ? res.status(200).json(findTalker) : res.status(404).json(responseError);
+const getTalkerId = async (require, response) => {
+  const data = await read(PATH_FILE);
+
+  const getTalker = data.find((talker) => talker.id === Number(require.params.id));
+
+  return getTalker ? response
+  .status(STATUS_OK).json(getTalker) : response.status(ERROR_STATUS).json(JSON_RES);
 };
 
 module.exports = getTalkerId;
