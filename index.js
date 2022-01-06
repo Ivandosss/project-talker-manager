@@ -12,13 +12,16 @@ app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
 });
 
-// Rotas;
-const { talker, login } = require('./routers');
+// REQUISITOS
 
-// Requisito 1, 2 e 4;
+// rotas
+const { talker, logging } = require('./routers');
+
+// requisitos 1, 2
 app.use('/talker', talker);
-// Requisito 3;
-app.use('/login', login);
+
+// requisito 3
+app.use('/login', logging);
 
 app.listen(PORT, () => {
   console.log('Online');
