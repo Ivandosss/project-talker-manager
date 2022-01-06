@@ -15,7 +15,7 @@ app.get('/', (_request, response) => {
 // Rotas;
 const { talker, login } = require('./routers');
 
-// Requisito 1 e 2;
+// Requisito 1, 2 e 4;
 app.use('/talker', talker);
 // Requisito 3;
 app.use('/login', login);
