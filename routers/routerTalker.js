@@ -5,5 +5,6 @@ const getTalkerId = require('../middlewares/getTalkerId');
 
 router.get('/', getTalkers);
 router.get('/:id', getTalkerId);
+router.post('/');
 
 module.exports = router;

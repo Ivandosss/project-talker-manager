@@ -1,7 +1,7 @@
 const { read } = require('../helpers/readBody');
 
 const path = './talker.json';
-const responseError = { menssage: 'Pessoa não encontrada' };
+const responseError = { menssage: 'Pessoa palestrante não encontrada' };
 
 const getTalkerId = async (req, res) => {
   const data = await read(path);
