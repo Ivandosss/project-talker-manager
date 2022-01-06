@@ -7,6 +7,8 @@ const { talkerValidation, fieldTalkerValidation } = require('../middlewares/talk
 const nameValidation = require('../middlewares/nameValidation');
 const insertTalker = require('../middlewares/insertTalker');
 const updateTalker = require('../middlewares/upDateTalker');
+const tokenValidation = require('../middlewares/tokenValidation');
+const deleteTalker = require('../middlewares/deleteTalker');
 
 router.get('/', getTalkers);
 router.get('/:id', getTalkerId);
@@ -26,5 +28,6 @@ router.put(
   nameValidation, 
   updateTalker,
 );
+router.delete('/:id', tokenValidation, deleteTalker);
 
 module.exports = router;
