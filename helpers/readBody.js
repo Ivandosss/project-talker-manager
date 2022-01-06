@@ -22,4 +22,13 @@ const body = async (object, scope) => {
   }
 };
 
-module.exports = { read, body };
+const updateBody = async (object, scope) => {
+  try {
+    await fs.writeFile(object, JSON.stringify(scope));
+    return scope;
+  } catch (error) {
+    return null;
+  }
+};
+
+module.exports = { read, body, updateBody };
