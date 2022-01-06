@@ -9,4 +9,17 @@ const read = async (path) => {
   }
 };
 
-module.exports = { read };
+const body = async (object, scope) => {
+  try {
+    const isBody = await read(object);
+    isBody.push(scope);
+
+    await fs.writeFile(object, JSON.stringify(isBody));
+
+    return scope;
+  } catch (error) {
+    return null;
+  }
+};
+
+module.exports = { read, body };
