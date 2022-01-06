@@ -10,7 +10,7 @@ const ageValidation = (request, response, next) => {
 
   if (age < 18) return response.status(ERROR_STATUS).json(INVALID_AGE);
 
-  next();
+next();
 };
 
 module.exports = ageValidation;
