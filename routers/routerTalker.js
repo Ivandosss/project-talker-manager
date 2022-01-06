@@ -14,18 +14,20 @@ router.get('/', getTalkers);
 router.get('/:id', getTalkerId);
 router.post(
   '/', 
-  talkerValidation, 
+  tokenValidation, 
   ageValidation, 
   fieldTalkerValidation, 
-  nameValidation, 
+  nameValidation,
+  talkerValidation, 
   insertTalker,
 );
 router.put(
   '/:id', 
-  talkerValidation, 
+  tokenValidation, 
   ageValidation, 
   fieldTalkerValidation, 
-  nameValidation, 
+  nameValidation,
+  talkerValidation, 
   updateTalker,
 );
 router.delete('/:id', tokenValidation, deleteTalker);
